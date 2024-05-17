@@ -11,3 +11,18 @@
 .rct-header-root .rct-header {
   border-color: #82ab98 !important; /* Change this to match your header color */
   color:#000 !important;
+}
+
+.rct-item {
+  background-color: #82ab98 !important; /* Your custom green color */
+  border-color: #6f947e !important; /* Darker shade for border */
+}
+
+.rct-item:hover {
+  background-color: #6f947e !important; /* Darker shade on hover */
+  border-color: #5e7f6a !important;
+}
+
+.rct-item-content {
+  color: #ffffff !important; /* White text color */
+}
