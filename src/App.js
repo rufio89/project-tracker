@@ -8,7 +8,8 @@ import ProjectTimeline from './ProjectTimeline';
 
 const App = () =>{
   const [projects, setProjects] = useState([]);
-  const [view, setView] = useState('card'); 
+  const [view, setView] = useState('add-project'); 
+  const [title, setTitle] = useState('Add Project');
   const [editingProject, setEditingProject] = useState(null);
 
 
@@ -43,11 +44,17 @@ const App = () =>{
   const resetEditingProject = () => {
     setEditingProject(null);
   };
+
+  const handleNavClick = (view, title) => {
+    setView(view);
+    setTitle(title);
+  };
   
 
   const setCardView = () => setView('card');
   const setTimelineView = () => setView('timeline');
   const setBothView = () => setView('both');
+  const setAddProjectView =() => setView('add-project');
 
   return (
     <div className="container">
@@ -55,25 +62,28 @@ const App = () =>{
       <div className="col-md-3 sidebar">
         <h2>Project Manager</h2>
         <nav className="nav flex-column">
-        <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={setCardView}>Card View</a>
-        <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={setTimelineView}>Timeline View</a>
-        <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={setBothView}>Both Views</a>
+        <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')}>Add Project</a>
+        <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')}>Card View</a>
+        <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')}>Timeline View</a>
+        <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('both', 'Timeline & Card')}>Timeline & Card</a>
         </nav>
       </div>
       <div className="col-md-9 offset-md-3">
         <div className="d-flex justify-content-between align-items-center mt-4">
-          <h1>Projects</h1>
-          <button className="btn btn-primary" onClick={() => setView('card')}>New Project</button>
+          <h1>{title}</h1>
+          <button className="btn btn-primary" onClick={() => setView('add-project')}>New Project</button>
         </div>
+        {view === 'add-project' ? (
         <ProjectForm
           addProject={addProject}
           currentProject={editingProject !== null ? projects[editingProject] : null}
           resetEditingProject={resetEditingProject}
         />
+        ): null}
         {view === 'timeline' || view === 'both' ? (
           <ProjectTimeline projects={projects} />
         ) : null}
-        {view === 'card' || view === 'both' ? (
+        {view === 'card' || view === 'both' || view == 'add-project' ? (
           <ProjectList
             projects={projects}
             deleteProject={deleteProject}

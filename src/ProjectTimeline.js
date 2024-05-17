@@ -20,7 +20,7 @@ const ProjectTimeline = ({ projects }) => {
   }));
 
   return (
-    <Timeline
+    <Timeline className="mt-3"
       groups={groups}
       items={items}
       defaultTimeStart={moment().add(-6, 'month')}
