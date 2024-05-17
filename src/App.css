@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+/* src/App.css */
+body {
+  background-color: #f8f9fa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card .btn-close {
+  position: absolute;
+  top: 15px !important;
+  right: 15px !important;
+  border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-close:hover {
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* General Styles */
+body {
+  background-color: #f5f7fa;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #ffffff;
+  border-bottom: none;
+  padding: 15px 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #82ab98;
+  border-color: #82ab98;
+}
+
+.btn-primary:hover {
+  background-color: #67947f;
+  border-color: #67947f;
+}
+
+.btn-danger{
+  background-color:#d9534f;
+  border-color:#c95b57; 
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #dfe3e8;
+  padding: 10px;
+}
+
+/* Layout Styles */
+.container {
+  max-width: 1200px;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e3e6f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar {
+  background-color: #ffffff;
+  border-right: 1px solid #e3e6f0;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+}
+
+.sidebar .nav-link {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.sidebar .nav-link:hover {
+  color: #556ee6;
+}
+
+.sidebar .nav-link.active {
+  color: #ffffff;
+  background-color: #82ab98;
+  border-radius: 5px;
+}
+
+.sidebar .nav-link.active:hover {
+  background-color: #67947f;;
+
 }

@@ -1,0 +1,13 @@
+/* src/customTimeline.css */
+.rct-header-root {
+    background-color: #FFF !important; /* Change this to your desired color */
+    color:#000 !important;
+  }
+
+  .react-calendar-timeline .rct-dateHeader-primary{
+    color:#000 !important;
+  }
+  
+.rct-header-root .rct-header {
+  border-color: #82ab98 !important; /* Change this to match your header color */
+  color:#000 !important;

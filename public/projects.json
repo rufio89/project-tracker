@@ -1,0 +1,82 @@
+[
+    {
+      "title": "Project Alpha",
+      "description": "A project to develop a new feature.",
+      "status": "In Progress",
+      "manager": "Alice Smith",
+      "teamMembers": ["Bob Johnson", "Carol King"],
+      "startDate": "2024-01-01",
+      "endDate": "2024-02-01",
+      "budget": 10000,
+      "priority": "High",
+      "milestones": [
+        { "name": "Kickoff", "date": "2024-01-01" },
+        { "name": "Phase 1 Complete", "date": "2024-01-15" }
+      ],
+      "risks": ["Risk 1: Lack of resources", "Risk 2: Tight schedule"],
+      "client": "XYZ Corp",
+      "attachments": ["plan.pdf", "contract.pdf"],
+      "dependencies": ["Project Beta"],
+      "completionCriteria": ["All features implemented", "Client approval"]
+    },
+    {
+      "title": "Project Beta",
+      "description": "A project to improve existing infrastructure.",
+      "status": "Completed",
+      "manager": "John Doe",
+      "teamMembers": ["Jane Smith", "Dave Brown"],
+      "startDate": "2023-03-01",
+      "endDate": "2023-06-01",
+      "budget": 20000,
+      "priority": "Medium",
+      "milestones": [
+        { "name": "Initial Analysis", "date": "2023-03-15" },
+        { "name": "Implementation", "date": "2023-05-01" }
+      ],
+      "risks": ["Risk 1: System downtime", "Risk 2: Data loss"],
+      "client": "ABC Inc",
+      "attachments": ["report.pdf", "summary.docx"],
+      "dependencies": ["Project Alpha"],
+      "completionCriteria": ["Infrastructure upgraded", "Minimal downtime"]
+    },
+    {
+      "title": "Project Delta",
+      "description": "A project to create a new mobile application.",
+      "status": "Planned",
+      "manager": "Emily Clark",
+      "teamMembers": ["Tom White", "Susan Green"],
+      "startDate": "2024-05-01",
+      "endDate": "2024-10-01",
+      "budget": 15000,
+      "priority": "High",
+      "milestones": [
+        { "name": "Design Phase", "date": "2024-05-15" },
+        { "name": "Development Phase", "date": "2024-07-01" }
+      ],
+      "risks": ["Risk 1: Budget overrun", "Risk 2: Feature creep"],
+      "client": "Mobile Solutions LLC",
+      "attachments": ["design.png", "proposal.pdf"],
+      "dependencies": ["Project Gamma"],
+      "completionCriteria": ["App launched", "User acceptance"]
+    },
+    {
+      "title": "Project Epsilon",
+      "description": "A project to migrate data to a new system.",
+      "status": "In Progress",
+      "manager": "Mark Taylor",
+      "teamMembers": ["Rachel Adams", "Luke Wilson"],
+      "startDate": "2024-01-10",
+      "endDate": "2024-04-10",
+      "budget": 5000,
+      "priority": "Low",
+      "milestones": [
+        { "name": "Data Backup", "date": "2024-01-20" },
+        { "name": "Migration Testing", "date": "2024-03-01" }
+      ],
+      "risks": ["Risk 1: Data corruption", "Risk 2: Downtime"],
+      "client": "Tech Innovators",
+      "attachments": ["migration_plan.docx", "risk_assessment.xlsx"],
+      "dependencies": ["Project Delta"],
+      "completionCriteria": ["Data migrated", "No data loss"]
+    }
+  ]

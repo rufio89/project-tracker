@@ -1,25 +1,91 @@
 import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
+import ProjectForm from './ProjectForm';
+import ProjectList from './ProjectList';
+import ProjectTimeline from './ProjectTimeline';
 
-function App() {
+
+const App = () =>{
+  const [projects, setProjects] = useState([]);
+  const [view, setView] = useState('card'); 
+  const [editingProject, setEditingProject] = useState(null);
+
+
+  useEffect(()=>{
+    fetch('/projects.json')
+      .then((response) => response.json())
+      .then((data)=> setProjects(data))
+      .catch((error) => console.error('Error loading initial data:', error))
+  }, []);
+  
+  const addProject = (project) => {
+    
+    if (editingProject !== null) {
+      const updatedProjects = projects.map((p, index) =>
+        index === editingProject ? project : p
+      );
+      setProjects(updatedProjects);
+      setEditingProject(null);
+    } else {
+      setProjects([...projects, project]);
+    }
+  };
+
+  const deleteProject = (index) => {
+    setProjects(projects.filter((_, i) => i !== index));
+  };
+
+  const editProject = (index) => {
+    setEditingProject(index);
+  };
+
+  const resetEditingProject = () => {
+    setEditingProject(null);
+  };
+  
+
+  const setCardView = () => setView('card');
+  const setTimelineView = () => setView('timeline');
+  const setBothView = () => setView('both');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+    <div className="row">
+      <div className="col-md-3 sidebar">
+        <h2>Project Manager</h2>
+        <nav className="nav flex-column">
+        <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={setCardView}>Card View</a>
+        <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={setTimelineView}>Timeline View</a>
+        <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={setBothView}>Both Views</a>
+        </nav>
+      </div>
+      <div className="col-md-9 offset-md-3">
+        <div className="d-flex justify-content-between align-items-center mt-4">
+          <h1>Projects</h1>
+          <button className="btn btn-primary" onClick={() => setView('card')}>New Project</button>
+        </div>
+        <ProjectForm
+          addProject={addProject}
+          currentProject={editingProject !== null ? projects[editingProject] : null}
+          resetEditingProject={resetEditingProject}
+        />
+        {view === 'timeline' || view === 'both' ? (
+          <ProjectTimeline projects={projects} />
+        ) : null}
+        {view === 'card' || view === 'both' ? (
+          <ProjectList
+            projects={projects}
+            deleteProject={deleteProject}
+            editProject={editProject}
+          />
+        ) : null}
+       
+      </div>
     </div>
-  );
+  </div>
+  )
+
 }
 
 export default App;
