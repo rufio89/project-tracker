@@ -4,6 +4,7 @@ import './App.css';
 import ProjectForm from './ProjectForm';
 import ProjectList from './ProjectList';
 import ProjectTimeline from './ProjectTimeline';
+import CalendarView from './CalendarView';
 
 
 const App = () =>{
@@ -66,6 +67,7 @@ const App = () =>{
         <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')}>Card View</a>
         <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')}>Timeline View</a>
         <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('both', 'Timeline & Card')}>Timeline & Card</a>
+        <a className={`nav-link ${view === 'calendar' ? 'active' : ''}`} href="#" onClick={() => handleNavClick('calendar', 'Calendar View')}>Calendar View</a>
         </nav>
       </div>
       <div className="col-md-9 offset-md-3">
@@ -90,7 +92,9 @@ const App = () =>{
             editProject={editProject}
           />
         ) : null}
-       
+       {view === 'calendar' ? (
+            <CalendarView projects={projects} />
+          ) : null}
       </div>
     </div>
   </div>

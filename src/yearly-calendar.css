@@ -1,0 +1,22 @@
+/* src/yearly-calendar.css */
+
+.year-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .month-container {
+    flex: 1 0 45%; /* Adjusted to show 2 months per row */
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .month-container h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
