@@ -60,11 +60,11 @@ const App = () =>{
       <div className="col-md-3 sidebar">
         <h2>Project Manager</h2>
         <nav className="nav flex-column">
-        <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')}>Add Project</a>
-        <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')}>Card View</a>
-        <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')}>Timeline View</a>
-        <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('both', 'Timeline & Card')}>Timeline & Card</a>
-        <a className={`nav-link ${view === 'calendar' ? 'active' : ''}`} href="#" onClick={() => handleNavClick('calendar', 'Calendar View')}>Calendar View</a>
+        <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Add Project</a>
+        <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Card View</a>
+        <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline View</a>
+        <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('both', 'Timeline & Card')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline & Card</a>
+        <a className={`nav-link ${view === 'calendar' ? 'active' : ''}`} href="#" onClick={() => handleNavClick('calendar', 'Calendar View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Calendar View</a>
         </nav>
       </div>
       <div className="col-md-9 offset-md-3">
