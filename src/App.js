@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import ProjectForm from './ProjectForm';
@@ -52,10 +52,7 @@ const App = () =>{
   };
   
 
-  const setCardView = () => setView('card');
-  const setTimelineView = () => setView('timeline');
-  const setBothView = () => setView('both');
-  const setAddProjectView =() => setView('add-project');
+
 
   return (
     <div className="container">
@@ -85,7 +82,7 @@ const App = () =>{
         {view === 'timeline' || view === 'both' ? (
           <ProjectTimeline projects={projects} />
         ) : null}
-        {view === 'card' || view === 'both' || view == 'add-project' ? (
+        {view === 'card' || view === 'both' || view === 'add-project' ? (
           <ProjectList
             projects={projects}
             deleteProject={deleteProject}
