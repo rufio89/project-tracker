@@ -5,6 +5,8 @@ import ProjectForm from './ProjectForm';
 import ProjectList from './ProjectList';
 import ProjectTimeline from './ProjectTimeline';
 import CalendarView from './CalendarView';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 const App = () =>{
@@ -12,6 +14,7 @@ const App = () =>{
   const [view, setView] = useState('add-project'); 
   const [title, setTitle] = useState('Add Project');
   const [editingProject, setEditingProject] = useState(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
 
   useEffect(()=>{
@@ -49,17 +52,25 @@ const App = () =>{
   const handleNavClick = (view, title) => {
     setView(view);
     setTitle(title);
+    if (window.innerWidth < 768) {
+      setSidebarOpen(false);
+    }
   };
   
-
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
 
   return (
     <div className="container">
     <div className="row">
-      <div className="col-md-3 sidebar">
+      <button className="btn btn-custom d-md-none" onClick={toggleSidebar}>
+      <FontAwesomeIcon icon={faBars} />
+      </button>
+      <div className={`col-md-3 sidebar ${sidebarOpen ? 'open' : ''}`}>
         <h2>Project Manager</h2>
-        <nav className="nav flex-column">
+        <nav className="nav flex-column mt-3">
         <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Add Project</a>
         <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Card View</a>
         <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline View</a>

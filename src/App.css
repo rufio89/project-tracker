@@ -85,6 +85,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Sidebar Styles */
 .sidebar {
   background-color: #ffffff;
   border-right: 1px solid #e3e6f0;
@@ -94,7 +95,31 @@ body {
   top: 0;
   left: 0;
   width: 250px;
+  transition: transform 0.3s ease-in-out;
 }
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}
+
+.btn-custom.d-md-none {
+  position: fixed; /* Use fixed positioning */
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Align to the left */
+  z-index: 1000;
+  text-align: left;;
+}
+
 
 .sidebar .nav-link {
   color: #6c757d;
