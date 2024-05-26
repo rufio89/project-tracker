@@ -1,6 +1,8 @@
 /* src/App.css */
 body {
   background-color: #f8f9fa;
+  padding-top: 56px; /* Ensure content is below the navbar */
+
 }
 
 
@@ -78,6 +80,9 @@ body {
 .container {
   max-width: 1200px;
 }
+.container-fluid {
+  padding: 20px; /* Add padding around the content */
+}
 
   /* Navbar Styles */
 .navbar {
@@ -85,7 +90,9 @@ body {
   display: flex;
   justify-content: center; /* Center the content */
   align-items: center;
-  position: relative;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .navbar-container {
@@ -97,7 +104,7 @@ body {
 
 .navbar-container .btn-custom.d-md-none {
   position: absolute;
-  left: 10px; /* Keep it aligned to the left */
+  left: 0px; 
 }
 
 .navbar-brand{
@@ -106,6 +113,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
+  top: 100px; /* Adjust to be below the navbar */
   background-color: #ffffff;
   border-right: 1px solid #e3e6f0;
   height: 100vh;
@@ -132,9 +140,6 @@ body {
   }
 }
 
-.btn-custom.d-md-none {
-  margin-left: 10px;
-}
 
 
 .sidebar .nav-link {
@@ -155,7 +160,4 @@ body {
 .sidebar .nav-link.active:hover {
   background-color: #67947f;;
 
-}
-.container-fluid {
-  padding: 0;
 }

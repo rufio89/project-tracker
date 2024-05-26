@@ -74,7 +74,7 @@ const App = () =>{
       </nav>
     <div className="row">
       <div className={`col-md-3 sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <nav className="nav flex-column mt-3">
+        <nav className="nav flex-column mt-5">
         <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Add Project</a>
         <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Card View</a>
         <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline View</a>
