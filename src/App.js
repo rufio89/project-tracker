@@ -63,13 +63,17 @@ const App = () =>{
 
 
   return (
-    <div className="container">
+    <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="navbar-container">
+          <button className="btn btn-custom d-md-none" onClick={toggleSidebar}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+          <span className="navbar-brand mb-0 h1">Project Manager</span>
+        </div>
+      </nav>
     <div className="row">
-      <button className="btn btn-custom d-md-none" onClick={toggleSidebar}>
-      <FontAwesomeIcon icon={faBars} />
-      </button>
       <div className={`col-md-3 sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <h2>Project Manager</h2>
         <nav className="nav flex-column mt-3">
         <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Add Project</a>
         <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Card View</a>
