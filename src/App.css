@@ -108,7 +108,8 @@ body {
 }
 
 .navbar-brand{
-  margin-left:30%;
+  text-align: center;
+  font-size:1.5em;
 }
 
 /* Sidebar Styles */
@@ -123,7 +124,7 @@ body {
   left: 0;
   width: 250px;
   transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 99999;
 }
 
 .sidebar.open {

@@ -5,6 +5,7 @@ import ProjectForm from './ProjectForm';
 import ProjectList from './ProjectList';
 import ProjectTimeline from './ProjectTimeline';
 import CalendarView from './CalendarView';
+import ListView from './ListView';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -69,13 +70,14 @@ const App = () =>{
           <button className="btn btn-custom d-md-none" onClick={toggleSidebar}>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <span className="navbar-brand mb-0 h1">Project Manager</span>
         </div>
       </nav>
     <div className="row">
       <div className={`col-md-3 sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <div className="navbar-brand mb-0">Project Manager</div>
         <nav className="nav flex-column mt-5">
         <a className={`nav-link ${view === 'add-project' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('add-project', 'Add Project')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Add Project</a>
+        <a className={`nav-link ${view === 'list' ? 'active' : ''}`} href="#" onClick={() => handleNavClick('list', 'List View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>List View</a>
         <a className={`nav-link ${view === 'card' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('card', 'Card View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Card View</a>
         <a className={`nav-link ${view === 'timeline' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('timeline', 'Timeline View')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline View</a>
         <a className={`nav-link ${view === 'both' ? 'active' : ''}`} href="#" onClick={()=> handleNavClick('both', 'Timeline & Card')} /* eslint-disable-line jsx-a11y/anchor-is-valid */>Timeline & Card</a>
@@ -107,6 +109,9 @@ const App = () =>{
        {view === 'calendar' ? (
             <CalendarView projects={projects} />
           ) : null}
+        {view === 'list' ? (
+            <ListView projects={projects} />
+        ) : null}
       </div>
     </div>
   </div>

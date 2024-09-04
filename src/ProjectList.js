@@ -4,19 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faMinus, faArrowDown, faTimes } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
+import Utility from './utils/utility';
 
-const getPriorityIcon = (priority) => {
-  switch (priority) {
-    case 'High':
-      return <FontAwesomeIcon icon={faArrowUp} className="text-danger" />;
-    case 'Medium':
-      return <FontAwesomeIcon icon={faMinus} className="text-warning" />;
-    case 'Low':
-      return <FontAwesomeIcon icon={faArrowDown} className="text-success" />;
-    default:
-      return null;
-  }
-};
 
 const ProjectList = ({ projects, deleteProject, editProject }) => {
   return (
@@ -38,7 +27,7 @@ const ProjectList = ({ projects, deleteProject, editProject }) => {
             <div className="card-body">
               <div className="card-text"><strong>Status:</strong> {project.status}</div>
               <div className="card-text">
-                <strong>Priority:</strong> {getPriorityIcon(project.priority)} {project.priority}
+                <strong>Priority:</strong> {Utility.getPriorityIcon(project.priority)} {project.priority}
               </div>
               <div className="card-text">
                 <strong>Start Date:</strong> {moment(project.startDate).format('MM/DD/YYYY')}
